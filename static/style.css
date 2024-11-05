@@ -1,0 +1,195 @@
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1f2020;
+    color: #ffffff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #adb5bd;
+}
+
+/* Main Content Styling */
+.main-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #2a2c2e; /* Darker background for modern look */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #ced4da;
+    margin-bottom: 1.5rem;
+}
+
+/* Model Selection Styling */
+.model-selection {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.model-selection label {
+    margin-right: 0.5rem;
+    color: #ffffff;
+}
+
+#modelSelect {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #495057;
+    background-color: #495057;
+    color: #ffffff;
+}
+
+/* Image Upload Section Styling */
+.image-upload-container {
+    margin: 1rem 0;
+}
+
+input[type="file"] {
+    margin-top: 1rem;
+    display: block;
+    margin: 0.5rem auto;
+    background-color: #343a40;
+    border: 1px solid #495057;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Results Section Styling */
+.results-container {
+    margin-top: 2rem;
+    text-align: left;
+    background-color: #343a40;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.prediction-detail {
+    margin-bottom: 0.75rem;
+    color: #ced4da;
+}
+
+/* Image Preview Styling */
+.image-preview {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.image-preview h3 {
+    font-size: 1.2rem;
+    color: #ced4da;
+    margin-bottom: 0.5rem;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #343a40; /* Darker modal background */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* Set a max width */
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Spinner styles */
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #007bff; /* Blue */
+    border-radius: 50%;
+    width: 40px; /* Width of the spinner */
+    height: 40px; /* Height of the spinner */
+    animation: spin 1s linear infinite; /* Spin animation */
+    margin: 0 auto; /* Center the spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

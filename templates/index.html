@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroAI - Flood Passability Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">HydroAI</div>
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Team</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <h1>Flood Passability Classification AI</h1>
+        <p>Select an image and model to predict flood levels:</p>
+
+        <div class="model-selection">
+            <label for="modelSelect">Fine-tuned Model:</label>
+            <select id="modelSelect">
+                <option value="Davinci-004-v6i">Davinci-004-v6i</option>
+                <option value="Turing-003-v5i">Turing-003-v5i</option>
+                <option value="Turing-003-v6">Turing-003-v6</option>
+                <option value="Turing-003-v6i">Turing-003-v6i</option>
+            </select>
+        </div>
+
+        <div class="image-upload-container">
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+            <button id="predictButton" onclick="predictImage()">Classify</button>
+        </div>
+
+        <div class="image-preview" id="imagePreviewContainer" style="display: none;">
+            <h3>Flood Image Footage Preview</h3>
+            <img id="imagePreview" alt="Uploaded Image Preview">
+        </div>
+
+        <div class="results-container" id="resultsContainer">
+            <h2>HydroAI Classification Results</h2>
+            <p id="result">AI Model Output:</p>
+
+            <div class="prediction-detail">
+                <strong>Estimated Water Level:</strong> <span id="waterLevel">N/A</span>
+            </div>
+            <div class="prediction-detail">
+                <strong>Flood Label:</strong> <span id="floodLabel">N/A</span>
+            </div>
+            <div class="prediction-detail">
+                <strong>Vehicles Allowed to Pass:</strong> <span id="allowedVehicles">N/A</span>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <h2>AI Model is Analyzing the Image...</h2>
+            <p>Please wait while we process your request.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+</body>
+</html>
