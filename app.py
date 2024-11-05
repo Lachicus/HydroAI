@@ -62,6 +62,11 @@ def predict_image(image, model):
 def index():
     return render_template('index.html')
 
+@app.route('/team')
+def team():
+    return render_template('team.html')
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'file' not in request.files or 'model' not in request.form:
