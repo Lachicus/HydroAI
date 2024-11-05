@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 <body>
+    
     <nav class="navbar">
         <div class="navbar-brand">HydroAI</div>
         <ul class="navbar-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Team</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('team') }}">Team</a></li>
         </ul>
     </nav>
-
     <div class="main-container">
         <h1>Flood Passability Classification AI</h1>
         <p>Select an image and model to predict flood levels:</p>
@@ -22,7 +22,6 @@
         <div class="model-selection">
             <label for="modelSelect">Fine-tuned Model:</label>
             <select id="modelSelect">
-                <option value="Davinci-004-v6i">Davinci-004-v6i</option>
                 <option value="Turing-003-v5i">Turing-003-v5i</option>
                 <option value="Turing-003-v6">Turing-003-v6</option>
                 <option value="Turing-003-v6i">Turing-003-v6i</option>
@@ -56,6 +55,7 @@
 
     </div>
     </div>
+
 
     <!-- Loading Modal -->
     <div id="loadingModal" class="modal">
